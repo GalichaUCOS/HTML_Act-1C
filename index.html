@@ -1,27 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Textarea Form</title>
-  </head>
-  <body>
-    <form action="thank_you.html" method="post">
-      <p>What did you think of this gig?</p>
-      <textarea name="comments" cols="20" rows="4">Enter your comments...</textarea>
-      <input type="submit" value="Submit">
-    </form>
-  </body>
-</html>
+</head>
+<body>
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Thank You</title>
-  </head>
-  <body>
-    <h1>Thank you, <span id="name"></span>!</h1>
-    <p>We appreciate your feedback.</p>
-    <script>
-      document.getElementById("name").innerText = new URLSearchParams(window.location.search).get("comments");
-    </script>
-  </body>
+<!-- Form section -->
+<form action="thank_you.html" method="post">
+    <p>What did you think of this gig?</p>
+    <textarea name="comments" id="comments" cols="20" rows="4">Enter your comments...</textarea><br>
+    <input type="submit" value="Submit" onclick="clearTextarea()">
+</form>
+
+<!-- JavaScript to clear the textarea -->
+<script>
+function clearTextarea() {
+    document.getElementById("comments").value = "";
+}
+</script>
+
+</body>
 </html>
