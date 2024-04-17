@@ -2,27 +2,22 @@
 <html>
 <head>
     <title>Textarea Form</title>
-    <style>
-        /* Hide the Thank You message by default */
-        .thank-you-message {
-            display: none;
-        }
-
-        /* Show the Thank You message when the form is submitted */
-        .thank-you-message:target {
-            display: block;
-        }
-    </style>
 </head>
 <body>
-    <h1>Welcome to our website!</h1>
-    <p>Please leave your comments below:</p>
-    <form id="commentForm" action="#">
-        <textarea id="comments" name="comments" cols="30" rows="5"></textarea>
-        <br>
+    <h1>Welcome to our Website!</h1>
+    <p>Please share your thoughts with us:</p>
+    <form action="#" method="post">
+        <p>What did you think of this gig?</p>
+        <textarea name="comments" cols="20" rows="4" placeholder="Enter your comments..."></textarea><br>
         <input type="submit" value="Submit">
     </form>
-    <!-- Thank You message -->
-    <p id="thankYouMessage" class="thank-you-message">Thank you for your feedback!</p>
+    
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if(isset($_POST['comments']) && !empty($_POST['comments'])){
+            echo "<p>Thank you for your comment!</p>";
+        }
+    }
+    ?>
 </body>
 </html>
