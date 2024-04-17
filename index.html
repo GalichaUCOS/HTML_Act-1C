@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Textarea Form(Galicha)</title>
+</head>
+<body>
+    <h1>Welcome to our Form!</h1>
+    <p>Please leave your comments below about the Gig:</p>
+    <form id="commentForm" action="http://www.example.com/comments.php">
+        <textarea id="comments" name="comments" cols="30" rows="5" oninput="showThankYou()"></textarea>
+    </form>
+    <p id="thankYouMessage" style="display:none;">Thank you for your feedback!</p>
+
+    <script>
+        function showThankYou() {
+            var commentText = document.getElementById("comments").value;
+            if (commentText.trim() !== "") {
+                document.getElementById("thankYouMessage").style.display = "block";
+            } else {
+                document.getElementById("thankYouMessage").style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
