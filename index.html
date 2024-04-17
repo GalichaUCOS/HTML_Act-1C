@@ -5,19 +5,23 @@
 </head>
 <body>
 
+<!-- Greeting section -->
+<div>
+    <h1>Welcome!</h1>
+    <p>Feel free to share your thoughts about the gig below.</p>
+</div>
+
 <!-- Form section -->
 <form action="thank_you.html" method="post">
     <p>What did you think of this gig?</p>
-    <textarea name="comments" id="comments" cols="20" rows="4">Enter your comments...</textarea><br>
-    <input type="submit" value="Submit" onclick="clearTextarea()">
+    <textarea name="comments" id="comments" cols="20" rows="4" autofocus>Enter your comments...</textarea><br>
+    <input type="submit" value="Submit" form="commentForm">
 </form>
 
-<!-- JavaScript to clear the textarea -->
-<script>
-function clearTextarea() {
-    document.getElementById("comments").value = "";
-}
-</script>
+<!-- Thank you message -->
+<div>
+    <h2>Thank you for your comment!</h2>
+</div>
 
 </body>
 </html>
